@@ -98,12 +98,12 @@ def edit_existing_record():
 def delete_record():
     #print('todo delete existing record. What if user wants to delete record that does not exist?')
     name = input('Enter name: ')
-    country = input(f'Enter country for {name} : ')
+    # country = input(f'Enter country for {name} : ')
     with sqlite3.connect(db) as conn:
-         results = conn.execute('SELECT * FROM chainsaw WHERE name like ? and country like ?', (name, country))
+         results = conn.execute('SELECT * FROM chainsaw WHERE name like ?', (name,))
          result = results.fetchone()
          if result:
-             conn.execute('DELETE FROM chainsaw WHERE name = ? and country = ?', (name, country))
+             conn.execute('DELETE FROM chainsaw WHERE name = ?', (name,))
     conn.close()            
 
 
