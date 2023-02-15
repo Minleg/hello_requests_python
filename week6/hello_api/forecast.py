@@ -1,5 +1,5 @@
 # Example URL
-# https://api.openweathermap.org/data/2.5/forecast?q=minneapolis,us&units=imperial&appid=2dadae09d640439cd2837e7d024ee036
+# https://api.openweathermap.org/data/2.5/forecast?q=minneapolis,us&units=imperial&appid={key}
 import os
 import requests
 from datetime import datetime
