@@ -49,11 +49,12 @@ def get_current_weather(location, key):
         return None, ex
 
 def get_am_or_pm(date_adjusted):
-    am_or_pm = 'AM'
-    date_time_list = date_adjusted.split(' ')
-    hour = date_time_list[1]
-    hour_list = hour.split(':')
-    hour = hour_list[0]
+    """ This method returns string 'AM' or 'PM' depending on what the local time is: """
+    am_or_pm = 'AM' # initialiazation
+    date_time_list = date_adjusted.split(' ') # date and time as seperate element as list
+    hour = date_time_list[1] # gets time in format %H:%M
+    hour_list = hour.split(':') 
+    hour = hour_list[0] # gets the hour value
     
     if int(hour) >= 12:
         am_or_pm = 'PM'
