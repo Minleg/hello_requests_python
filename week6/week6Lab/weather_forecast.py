@@ -13,7 +13,7 @@ def main():
     if error:
         print('Sorry, could not get weather') # may be the city doesn't exist in the country
     else:
-        list_of_forecast = weather_data['list']
+        list_of_forecast = weather_data['list'] # gets list of the weather information every three hours of the next five days 
         print('Date         Time        Temperature     Wind Speed      Weather Description')
         for forecast in list_of_forecast:
             temp = forecast['main']['temp']
@@ -24,6 +24,7 @@ def main():
             print(f'{forecast_date} {temp:>13}F{wind_speed:>15}         {weather_description}')
 
 def get_location():
+    """ This method gets the city and the two alphabet code of the country it resides in and returns the location"""
     city, country = '', ''
     while len(city) == 0 or not city.isalpha():
         city = input('Enter the name of the city: ').strip()
@@ -35,7 +36,7 @@ def get_location():
     return location
 
 def get_current_weather(location, key):
-    """ this method connects to the api to get weather data, it returns a tuple of the response data and the exception if any """
+    """ this method connects to the api to get weather forecast data, it returns a tuple of the response data and the exception if any """
     try:
         query = {'q': location, 'units': 'metric', 'appid':key}
         response = requests.get(url, params=query)
@@ -44,13 +45,6 @@ def get_current_weather(location, key):
         return data, None
     except Exception as ex:
         return None, ex
-
-def get_temp(weather_data):
-    try:
-        temp = weather_data['main']['temp']
-        return temp
-    except KeyError as ke:
-        return 'Unknown'
 
 if __name__ == '__main__':
     main()
