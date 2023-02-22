@@ -19,9 +19,11 @@ def main():
             temp = forecast['main']['temp']
             timestamp = forecast['dt']
             forecast_date = datetime.fromtimestamp(timestamp)
+            date_adjusted =  forecast_date.strftime('%m/%d/%Y %H:%M') # adjusted date and time format
+            am_or_pm = get_am_or_pm(date_adjusted)
             weather_description = forecast['weather'][0]['description']
             wind_speed = forecast['wind']['speed']
-            print(f'{forecast_date} {temp:>13}F{wind_speed:>15}         {weather_description}')
+            print(f'{date_adjusted}{am_or_pm} {temp:>13}F{wind_speed:>15}         {weather_description}')
 
 def get_location():
     """ This method gets the city and the two alphabet code of the country it resides in and returns the location"""
@@ -45,6 +47,17 @@ def get_current_weather(location, key):
         return data, None
     except Exception as ex:
         return None, ex
+
+def get_am_or_pm(date_adjusted):
+    am_or_pm = 'AM'
+    date_time_list = date_adjusted.split(' ')
+    hour = date_time_list[1]
+    hour_list = hour.split(':')
+    hour = hour_list[0]
+    
+    if int(hour) >= 12:
+        am_or_pm = 'PM'
+    return am_or_pm
 
 if __name__ == '__main__':
     main()
