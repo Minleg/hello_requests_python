@@ -1,6 +1,6 @@
 import requests
 import os
-from pprint import pprint
+import logging
 from datetime import datetime
 
 key = os.environ.get('WEATHER_KEY')
@@ -12,6 +12,7 @@ def main():
     weather_data, error = get_current_weather(location, key)
     if error:
         print('Sorry, could not get weather') # may be the city doesn't exist in the country
+        logging.debug(f'weather data not found {error}')
     else:
         list_of_forecast = weather_data['list'] # gets list of the weather information every three hours of the next five days 
         print('Date         Time        Temperature     Wind Speed      Weather Description')
@@ -46,6 +47,7 @@ def get_current_weather(location, key):
         data = response.json() # this may error too, if response is not JSON
         return data, None
     except Exception as ex:
+        logging.debug(f'Unable to connect with api {ex}')
         return None, ex
 
 def get_am_or_pm(date_adjusted):
