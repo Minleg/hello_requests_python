@@ -1,0 +1,9 @@
+Part 3:
+Logging vs print
+
+Logging is used for debugging purpose and are meant solely to help the developer debug issues with the program and to 
+ensure that the code works as expected.
+Print is used for displaying messages to the user. Either to let them know that eveyrthing is working as expected or to let them know that
+something is going wrong. It lets the user know in a simple terms so even a non programmer user can understand what's going on with the program.
+
+Sensitive information like values of the API keyss should not be logged as it is private and personal. It should be stored as a environment variable.
