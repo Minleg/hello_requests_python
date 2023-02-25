@@ -1,0 +1,12 @@
+2023-02-25 00:40:28,266 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openweathermap.org:443
+2023-02-25 00:40:28,543 - urllib3.connectionpool - DEBUG - https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=jfldaj%2Cus&units=metric&appid=2dadae09d640439cd2837e7d024ee036 HTTP/1.1" 404 40
+2023-02-25 00:40:28,547 - root - DEBUG - Unable to connect with api 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/forecast?q=jfldaj%2Cus&units=metric&appid=2dadae09d640439cd2837e7d024ee036
+2023-02-25 00:40:28,547 - root - DEBUG - weather data not found 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/forecast?q=jfldaj%2Cus&units=metric&appid=2dadae09d640439cd2837e7d024ee036
+2023-02-25 00:40:54,742 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openweathermap.org:443
+2023-02-25 00:40:55,001 - urllib3.connectionpool - DEBUG - https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=tokyo%2Cjp&units=metric&appid=2dadae09d640439cd2837e7d024ee036 HTTP/1.1" 200 15782
+2023-02-25 00:41:03,031 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openweathermap.org:443
+2023-02-25 00:41:03,511 - urllib3.connectionpool - DEBUG - https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=minneapolis%2Cus&units=metric&appid=2dadae09d640439cd2837e7d024ee036 HTTP/1.1" 200 16078
+2023-02-25 00:41:42,421 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.openweathermap.org:443
+2023-02-25 00:41:42,680 - urllib3.connectionpool - DEBUG - https://api.openweathermap.org:443 "GET /data/2.5/forecast?q=paris%2Cin&units=metric&appid=2dadae09d640439cd2837e7d024ee036 HTTP/1.1" 404 40
+2023-02-25 00:41:42,686 - root - DEBUG - Unable to connect with api 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/forecast?q=paris%2Cin&units=metric&appid=2dadae09d640439cd2837e7d024ee036
+2023-02-25 00:41:42,686 - root - DEBUG - weather data not found 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/forecast?q=paris%2Cin&units=metric&appid=2dadae09d640439cd2837e7d024ee036

@@ -3,6 +3,11 @@ import os
 import logging
 from datetime import datetime
 
+""" Configure your logger. filenmae - where to write to. otherwise logs write to the console 
+level is the minimum log level that is recorded. DEBUG means log everything.
+format sets the format of the string that is recorder for each log event."""
+logging.basicConfig(filename='log_message_debug.log', level=logging.DEBUG, format=f'%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 key = os.environ.get('WEATHER_KEY')
 
 url = 'https://api.openweathermap.org/data/2.5/forecast'
